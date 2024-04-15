@@ -1,0 +1,101 @@
+.container1 {
+    max-width:1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  th {
+    background-color:hsl(220, 64%, 37%);;
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  .diabetes {
+    background-color: #ffcccc;
+  }
+  .heart {
+    background-color: #ccffff;
+  }
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  input[type="number"],
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  .btn-container1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .btn1 {
+    padding: 10px 20px;
+    border: none;
+    background-color:hsl(220, 64%, 37%);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  .btn:hover {
+    background-color:hsl(220, 64%, 37%);
+  }
+  .form-container {
+    display: none;
+  }
+  .form-container.active {
+    display: block;
+  }
+
+  @media screen and (max-width: 100px) {
+    table,
+    .container {
+      width: 100%;
+    }
+    table,
+    th,
+    td {
+      border: none;
+    }
+    th {
+      display:flex;
+    }
+    td {
+      padding: 12px 20px;
+    }
+    tr {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 0;
+    }
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
