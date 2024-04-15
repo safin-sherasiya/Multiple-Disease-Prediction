@@ -7,8 +7,8 @@ app = Flask(__name__)
 # Load the models
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-heart_model = pickle.load(open('heart_disease_model.sav', 'rb'))
-diabetes_model = pickle.load(open('diabetes_model.sav', 'rb'))
+heart_model = pickle.load(open('model/heart_disease_model.sav', 'rb'))
+diabetes_model = pickle.load(open('model/diabetes_model.sav', 'rb'))
 
 @app.route('/')
 def index():
