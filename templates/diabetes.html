@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Disease Prediction</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./static/images/images__1_-removebg-preview.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/d2.css')}}">
+
+
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+ 
+  
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./static/images/images__1_-removebg-preview.png" alt="Company Logo">
+
+        <!-- <span class="span">Multiple Disease Pred</span> -->
+      </a>
+      <a href="#" class="span1">Multiple Disease Prediction</a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="{{url_for('index')}}" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="detection.html" class="navbar-link" data-nav-link>Detection</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- <a href="#" class="btn btn-secondary">Join Now</a> -->
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      
+    </div>
+
+    </div>
+
+    
+  </header>
+
+    <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+        style="background-image: url('./static/images/hero-bg.png')">
+     
+          <div class="container1">
+
+            <div class="hero-content">
+
+            <div class="form-container active" id="diabetesForm">
+              <table>
+                <tr class="diabetes">
+                  <th colspan="4">Diabetes Detection</th>
+                </tr>
+                <tr class="diabetes">
+                  <td>
+                  <form action="/diabetes" method="post">
+                    <label for="pregnancies">Pregnancies</label>
+                    <input type="number" id="pregnancies" name="pregnancies">
+                  </td>
+                  <td>
+                    <label for="glucose">Glucose Level</label>
+                    <input type="number" id="glucose" name="glucose">
+                  </td>
+                  <td>
+                    <label for="blood_pressure">Blood Pressure</label>
+                    <input type="number" id="blood_pressure" name="blood_pressure">
+                  </td>
+                  <td>
+                    <label for="skin_thickness">Skin Thickness</label>
+                    <input type="number" id="skin_thickness" name="skin_thickness">
+                  </td>
+                </tr>
+                <tr class="diabetes">
+                  <td>
+                    <label for="insulin_level">Insulin Level</label>
+                    <input type="number" id="insulin_level" name="insulin_level">
+                  </td>
+                  <td>
+                    <label for="bmi">BMI</label>
+                    <input type="number" id="bmi" name="bmi">
+                  </td>
+                  <td>
+                    <label for="diabetes_pedigree">Diabetes Pedigree Function</label>
+                    <input type="number" id="diabetes_pedigree" name="diabetes_pedigree">
+                  </td>
+                  <td>
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age">
+                  </td>
+                  </tr>
+                </tr>
+                <tr class="diabetes">
+                  <td colspan="4">
+                    <label for="gender">Gender</label>
+                    <input type="text" id="gender" name="gender">
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <button class="btn1" onclick="submitForm()">Submit</button>
+          </form>
+          {% if prediction is not none %}
+          <p>Prediction: {{ result }}</p>
+          {% endif %}
+          </div>
+          </div>
+            
+              <!-- <div class="btn-container1">
+                <button class="btn1" onclick="submitForm()">Submit</button>
+              </div> -->
+          </div>
+            
+           </div>
+    </section>
+
+<br>
+
+  
+
+  
+    <!-- - #BACK TO TOP -->
+  
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./static/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    function showDiabetes() {
+    document.getElementById("diabetesForm").classList.add("active");
+    document.getElementById("heartForm").classList.remove("active");
+  }
+
+  function showHeart() {
+    document.getElementById("heartForm").classList.add("active");
+    document.getElementById("diabetesForm").classList.remove("active");
+  }
+
+  function submitForm() {
+    // Implement your form submission logic here
+    alert("Form submitted successfully!");
+  }
+  </script>
+
+
+</body>
+</html>

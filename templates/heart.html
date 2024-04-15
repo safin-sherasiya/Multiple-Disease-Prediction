@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Disease Prediction</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./static/images/images__1_-removebg-preview.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <!-- <link rel="stylesheet" href="./static/css/style.css"> -->
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/d2.css')}}">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./static/images/hero-banner.png">
+  <link rel="preload" as="image" href="./static/images/hero-circle-one.png">
+  <link rel="preload" as="image" href="./static/images/hero-circle-two.png">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./static/images/images__1_-removebg-preview.png" alt="Company Logo">
+
+        <!-- <span class="span">Multiple Disease Pred</span> -->
+      </a>
+      <a href="#" class="span1">Multiple Disease Prediction</a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="{{url_for('index')}}" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="#class" class="navbar-link" data-nav-link>Detection</a>
+          </li>
+
+      
+        </ul>
+
+      </nav>
+
+      <!-- <a href="#" class="btn btn-secondary">Join Now</a> -->
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+      
+    </div>
+
+    </div>
+
+    
+  </header>
+
+    <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+        style="background-image: url('./static/images/hero-bg.png')">
+        <div class="container1">
+
+          <div class="hero-content">
+
+            <div class="form-container active" id="heartForm">
+
+              <table>
+                  <tr class="heart">
+                    <th colspan="4">Heart Detection</th>
+                  </tr>
+                  <tr class="heart">
+                    <td>
+                    <form action="/heart" method="POST">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                    </td>
+          
+                    <td>
+                    <label for="Sex">Sex:</label>
+                    <input type="number" id="Sex" name="Sex" required>
+                    </td>
+          
+                    <td>
+                    <label for="cp">Chest Pain Type:</label>
+                    <input type="number" id="cp" name="cp" required>
+                    </td>
+          
+                    <td>
+                    <label for="trestbps">Resting Blood Pressure:</label>
+                    <input type="number" id="trestbps" name="trestbps" required>
+                    </td>
+          
+                  </tr>
+                  <tr class="heart">
+                    <td>
+                      <label for="chol">Serum Cholestoral in mg/dl:</label>
+                      <input type="number" id="chol" name="chol" required>
+                    </td>
+          
+                    <td>
+                      <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+                      <input type="number" id="fbs" name="fbs" required>
+                    </td>
+          
+                    <td>
+                      <label for="restecg">Resting Electrocardiographic Results:</label>
+                      <input type="number" id="restecg" name="restecg" required>
+                    </td>
+          
+                    <td>
+                      <label for="thalach">Maximum Heart Rate Achieved:</label>
+                      <input type="number" id="thalach" name="thalach" required>
+                    </td>
+                  </tr>
+                  <tr class="heart">
+                          <td>
+                          <label for="exang">Exercise Induced Angina:</label>
+                          <input type="number" id="exang" name="exang" required>
+                          </td>
+          
+                          <td>
+                            <label for="oldpeak">ST Depression Induced by Exercise:</label>
+                            <input type="number" id="oldpeak" name="oldpeak" required>
+                          </td>
+          
+                          <td>
+                          <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+                          <input type="number" id="slope" name="slope" required>
+                          </td>
+          
+                          <td>
+                          <label for="ca">Number of Major Vessels Colored by Flourosopy:</label>
+                          <input type="number" id="ca" name="ca" required>
+                          </td>
+                  </tr>
+                  </tr>
+                  <tr class="heart">
+                    <td colspan="4">
+                      <label for="thal">Thal:</label>
+                      <input type="number" id="thal" name="thal" required>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+                <button class="btn1" onclick="submitForm()">Submit</button>
+              </form>
+              {% if prediction is not none %}
+              <p>Prediction: {{ result }}</p>
+              {% endif %}
+              </div>
+            </div>
+           
+        </div>
+    </section>
+
+<br>
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./static/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    function showDiabetes() {
+    document.getElementById("diabetesForm").classList.add("active");
+    document.getElementById("heartForm").classList.remove("active");
+  }
+
+  function showHeart() {
+    document.getElementById("heartForm").classList.add("active");
+    document.getElementById("diabetesForm").classList.remove("active");
+  }
+
+  function submitForm() {
+    // Implement your form submission logic here
+    alert("Form submitted successfully!");
+  }
+  </script>
+
+
+</body>
+</html>

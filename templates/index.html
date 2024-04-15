@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiple Disease Predict </title>
+
+  <!-- 
+    - icon link
+  -->
+  <link rel="shortcut icon" href="./static/images/images__1_-removebg-preview.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <script type="text/javascript" src="{{ url_for('static',filename='script/script.js') }}">
+    
+  </script>
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="{{url_for('static',filename='images/images__1_-removebg-preview.png')}}" alt="Company Logo">
+
+       
+      </a>
+
+      <a href="#" class="span1">Multiple Disease Prediction</a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="#class" class="navbar-link" data-nav-link>Detection</a>
+          </li>
+
+        
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+    </div>
+  </header>
+
+
+
+  <main>
+    <article>
+
+      
+
+      <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+        style="background-image: url('/static/images/hero-bg.png')">
+        <div class="container">
+
+          <div class="hero-content">
+
+          
+
+            <h1 class="h1 hero-title">Multiple Disease Prediction</h1>
+
+            <p class="section-text">
+              Predict multiple diseases with ease.
+            </p>
+
+            <a href="{{ url_for('detection')}}" class="btn btn-primary">Start Detection</a>
+
+          </div>
+
+          <div class="hero-banner">
+
+            <img src="./static/images/i2.png" width="660" height="760" alt="hero banner" class="w-100">
+
+            <img src="./static/images/c1.png" width="666" height="666" aria-hidden="true" alt="" 
+              class="circle circle-1">
+            <img src="./static/images/c2.png" width="666" height="666" aria-hidden="true" alt="" 
+              class="circle circle-2"> 
+
+            
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about" style="padding-top: 180px;">
+        <div class="container">
+
+          <div class="about-banner has-after">
+            <img src="./static/images/image.png" width="600" height="648" loading="lazy" alt="about banner"
+              class="w-100">
+
+            <img src="./static/images/about-circle-one.png" width="660" height="700" loading="lazy" aria-hidden="true"
+              alt="" class="circle circle-1">
+            <img src="./static/images/about-circle-two.png" width="660" height="700" loading="lazy" aria-hidden="true"
+              alt="" class="circle circle-2">
+
+       
+          </div>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h3 class="h3 section-title">Welcome To Our Multiple Disease Prediction</h3>
+
+            <p class="section-text">
+              The Multiple Disease Prediction project is dedicated to providing accurate and reliable predictions for various
+              diseases including Diabetes and Heart Disease.
+            </p>
+
+            <p class="section-text">
+              Our team of experts has carefully curated and analyzed data from diverse sources to ensure the highest level of precision in our predictions.
+            </p>
+
+            <p class="section-text">
+              We are committed to leveraging the power of machine learning and artificial intelligence to empower individuals and healthcare professionals in the early detection and proactive management of diseases.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CLASS
+      -->
+
+      <section class="section class bg-dark has-bg-image" id="class" aria-label="class"
+        style="background-image: url('./static/images/classes-bg.png')">
+        <div class="container">
+
+
+          <h2 class="h2 section-title text-center">Multiple Disease Prediction System</h2>
+
+          <ul class="class-list has-scrollbar">
+
+            <li class="scrollbar-item">
+              <div class="class-card">
+
+                <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
+                  <img src="./static/images/d4.webp" width="416" height="240" loading="lazy" alt="Weight Lifting"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="title-wrapper">
+                    <img src="./static/images/icons8-diabetes-16.png" width="52" height="52" aria-hidden="true" alt=""
+                      class="title-icon">
+
+                    <h3 class="h3">
+                      <a href="./diabetes.html" class="card-title">Diabetes Prediction</a>
+                    </h3>
+                  </div>
+
+                  <p class="card-text">
+                    Predict the likelihood of developing diabetes based on various health parameters.
+                  </p>
+
+                  <div class="card-progress" align="center">
+
+                    <a href="{{url_for('diabetes')}}" class="btn btn-primary">Explore More</a>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li class="scrollbar-item">
+              <div class="class-card">
+
+                <figure class="card-banner img-holder" style="--width: 416; --height: 240;">
+                  <img src="./static/images/d4.webp" width="416" height="240" loading="lazy" alt="Cardio & Strenght"
+                    class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="title-wrapper">
+                    <img src="./static/images/icons8-heart-with-pulse-48.png" width="52" height="52" aria-hidden="true" alt=""
+                      class="title-icon">
+
+                    <h3 class="h3">
+                      <a href="./heart.html" class="card-title">Heart Disease Prediction</a>
+                    </h3>
+                  </div>
+
+                  <p class="card-text">
+                    Predict the likelihood of developing heart disease based on various health parameters.
+                  </p>
+
+                  <div class="card-progress" align="center">
+
+
+                    <a href="{{url_for('heart')}}" class="btn btn-primary">Explore More</a>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <br>
+      <br>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="section footer-top bg-dark has-bg-image1">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+
+            <span class="span">MDP</span>
+          </a>
+
+          <p class="footer-brand-text">
+            Multiple Disease Prediction is a platform that leverages the power of machine learning and artificial intelligence to provide accurate predictions for various diseases.
+          </p>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title has-before">Our Links</p>
+          </li>
+
+          <li>
+            <a href="#home" class="footer-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="#class" class="footer-link">Detection</a>
+          </li>
+
+        
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title has-before">Contact Us</p>
+          </li>
+
+          <li class="footer-list-item">
+            <div class="icon">
+              <ion-icon name="location" aria-hidden="true"></ion-icon>
+            </div>
+
+            <address class="address footer-link">
+              Rajkot, Gujarat.
+            </address>
+          </li>
+
+          <li class="footer-list-item">
+            <div class="icon">
+              <ion-icon name="call" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div>
+              <a href="tel:+919714362919" class="footer-link">+919714362919</a>
+            </div>
+          </li>
+
+          <li class="footer-list-item">
+            <div class="icon">
+              <ion-icon name="mail" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div>
+              <a href="safinsherasiya@gmail.com" class="footer-link">safinsherasiya@gmail.com</a>
+
+             
+            </div>
+          </li>
+
+        </ul>
+
+        <ol class="footer-list">
+
+         
+
+          <li>
+            <ul class="social-list">
+
+              <li>
+                <a href="https://www.linkedin.com/in/safin-sherasiya" target="_blank" class="social-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.instagram.com/safin.sherasiya" target="_blank" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://x.com/SafinSherasiya"  class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.facebook.com/" target="_blank" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </ol>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2024 Multiple Disease Prediction. All Rights Reserved By <a href="#" class="copyright-link">MDP</a>
+        </p>
+
+        
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./static/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

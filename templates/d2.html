@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction Analysis</title>
+    <style>
+        /* Default styles */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            background-image: url(d22.jpg);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: rgb(1, 1, 42);
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #1a4970;
+        }
+
+        .content {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(1, 1, 42);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1a4970;
+        }
+
+        table {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            text-align:left;
+        }
+
+        /* Media query for smaller screens */
+        @media only screen and (max-width: 800px) {
+            .container {
+                padding: 10px;
+            }
+            .tab {
+                padding: 10px;
+            }
+            input[type="text"],
+            input[type="number"],
+            select {
+                width: calc(100% - 22px);
+            }
+            input[type="submit"] {
+                padding: 12px 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="tabs">
+            <div class="tab active" onclick="openTab('diabetes')">Diabetes Prediction</div>
+            <div class="tab" onclick="openTab('heart')">Heart Prediction</div>
+        </div> -->
+        <div id="diabetes" class="content active">
+            <h2>Diabetes Prediction Analysis</h2>
+            <form action="#" method="post" id="diabetesForm">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="pregnancies">Pregnancies:</label>
+                            <input type="text" id="pregnancies" name="pregnancies" required>
+                        </td>
+                        <td >
+                            <label for="glucose">Glucose Level:</label>
+                            <input type="text" id="glucose" name="glucose" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="bloodPressure">Blood Pressure:</label>
+                            <input type="text" id="bloodPressure" name="bloodPressure" required>
+                        </td>
+                        <td>
+                            <label for="skinThickness">Skin Thickness:</label>
+                            <input type="text" id="skinThickness" name="skinThickness" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="insulin">Insulin Level:</label>
+                            <input type="text" id="insulin" name="insulin" required>
+                        </td>
+                        <td>
+                            <label for="bmi">BMI:</label>
+                            <input type="text" id="bmi" name="bmi" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="diabetesPedigree">Diabetes Pedigree Function:</label>
+                            <input type="text" id="diabetesPedigree" name="diabetesPedigree" required>
+                        </td>
+                        <td>
+                            <label for="age">Age:</label>
+                            <input type="text" id="age" name="age" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Predict Diabetes">
+            </form>
+        </div>
+    </div>
+    <script>
+        function openTab(tabName) {
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            var contents = document.getElementsByClassName("content");
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+        }
+    </script>
+</body>
+</html>
+
