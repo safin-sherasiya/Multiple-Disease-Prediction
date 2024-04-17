@@ -16,7 +16,7 @@ This project leverages the power of machine learning techniques to analyze compr
    ```bash
    git clone https://github.com/safin-sherasiya/Multiple-Disease-Prediction.git
 
-2. run python main.py
+2. run python app.py
 
 
 ## Screenshot
